@@ -32,6 +32,44 @@ function installCommandLineTools {
   rm cli_tools.dmg
 }
 
+function installHomebrew {
+  echo 'Installing Homebrew...'
+  cd ~
+
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+}
+
+function installGit {
+  echo 'Installing Git...'
+  cd ~
+
+  brew install git
+}
+
+function installSqlite {
+  echo 'Installing SQlite3...'
+  cd ~
+
+  brew install sqlite3
+}
+
+function installRVM {
+  echo 'Installing RVM and Ruby 2.1.2...'
+  cd ~
+
+  \curl -L https://get.rvm.io | bash -s stable --ruby=2.1.2
+  rvm use 2.1.2 --default
+}
+
+function installSublime {
+  echo 'Installing SublimeText 2.0...'
+  cd ~
+}
+
 # copyBashProfile
 # getCommandLineTools
 # installCommandLineTools
+# installHomebrew
+# installGit
+# installSqlite
+# installRVM
