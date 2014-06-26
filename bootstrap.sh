@@ -9,6 +9,7 @@ function copyBashProfile {
   fi
 
   curl "http://bit.ly/flatiron-school-bash-profile" -o ".bash_profile"
+  source $HOME/.bash_profile
 }
 
 function getCommandLineTools {
@@ -42,6 +43,7 @@ function installHomebrew {
 function installGit {
   echo 'Installing Git...'
   cd ~
+  source $HOME/.bash_profile
 
   brew install git
 }
@@ -58,6 +60,8 @@ function installRVM {
   cd ~
 
   \curl -L https://get.rvm.io | bash -s stable --ruby=2.1.2
+  source $HOME/.bash_profile
+
   rvm use 2.1.2 --default
 }
 
