@@ -17,4 +17,4 @@ environment. It assumes a fresh install of OS X 10.9 (Mavericks).
 
 ## Usage
 
-`curl -Lo- <LINKPENDING> | bash`
+`curl -Lo- "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/bootstrap.sh" | bash`
