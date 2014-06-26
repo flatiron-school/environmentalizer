@@ -106,20 +106,19 @@ function installSublime {
   rm sublime.dmg
   
   sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin
-  #open "/Applications/Sublime Text 2.app"
-  #killall "Sublime Text 2"
+  open "/Applications/Sublime Text 2.app" && killall "Sublime Text 2"
   
-  mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Installed Packages"
+  # mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Installed Packages"
   cd "$HOME/Library/Application Support/Sublime Text 2/Installed Packages"
   curl "https://sublime.wbond.net/Package%20Control.sublime-package" -o "Package Control.sublime-package"
 
-  mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Default"
+  # mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Default"
   cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Default"
   curl "http://flatironschool.s3.amazonaws.com/curriculum/resources/environment/themes/Solarized%20Flatiron.zip" -o "Solarized Flatiron.zip"
   tar -zxvf "Solarized Flatiron.zip"
   rm "Solarized Flatiron.zip"
   
-  mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages/Default"
+  # mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages/Default"
   cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Default"
   sed -i '' "s/\"tab_size\": 4,/\"tab_size\": 2,/g" Preferences.sublime-settings
   sed -i '' "s/\"translate_tabs_to_spaces\": false,/\"translate_tabs_to_spaces\": true,/g" Preferences.sublime-settings
