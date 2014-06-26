@@ -27,7 +27,7 @@ function installCommandLineTools {
   cd ~
 
   hdiutil attach cli_tools.dmg
-  installer -pkg "/Volumes/Command Line Developer Tools/Command Line Tools (OS X 10.9).pkg" -target "/Volumes/Macintosh HD"
+  sudo installer -pkg "/Volumes/Command Line Developer Tools/Command Line Tools (OS X 10.9).pkg" -target "/Volumes/Macintosh HD"
   hdiutil detach "/Volumes/Command Line Developer Tools"
   rm cli_tools.dmg
 }
