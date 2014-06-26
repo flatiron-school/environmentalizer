@@ -8,8 +8,7 @@ function copyBashProfile {
     mv .bash_profile .bash_profile.old
   fi
 
-  curl "http://bit.ly/flatiron-school-bash-profile" -o ".bash_profile"
-  source $HOME/.bash_profile
+  curl "https://raw.githubusercontent.com/flatiron-school/dotfiles/master/bash_profile" -o ".bash_profile"
 }
 
 function getCommandLineTools {
@@ -20,7 +19,7 @@ function getCommandLineTools {
     rm cli_tools.dmg
   fi
 
-  curl "http://bit.ly/flatiron-gcc" -o "cli_tools.dmg"
+  curl "http://flatiron-school.s3.amazonaws.com/software/command_line_tools_os_x_mavericks_for_xcode__late_october_2013.dmg" -o "cli_tools.dmg"
 }
 
 function installCommandLineTools {
@@ -28,7 +27,7 @@ function installCommandLineTools {
   cd ~
 
   hdiutil attach cli_tools.dmg
-  installer -pkg "/Volumes/Command Line Developer Tools/Command Line Tools (OS X 10.9).pkg" -target "/Volumes/Macintosh HD"
+  sudo installer -pkg "/Volumes/Command Line Developer Tools/Command Line Tools (OS X 10.9).pkg" -target "/Volumes/Macintosh HD"
   hdiutil detach "/Volumes/Command Line Developer Tools"
   rm cli_tools.dmg
 }
@@ -81,20 +80,26 @@ function installSublime {
   cd ~
 
   hdiutil attach sublime.dmg
-  cp "/Volumes/Sublime Text 2/Sublime Text 2.app" "$HOME/Applications/Sublime Text 2.app"
+  cp -r "/Volumes/Sublime Text 2/Sublime Text 2.app" "/Applications/Sublime Text 2.app"
   hdiutil detach "/Volumes/Sublime Text 2"
 
   rm sublime.dmg
   
-  ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin
-
-  cd "$HOME/Library/Application Support/Sublime Text 2"
+  sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin
+  subl
+  killall "Sublime Text 2"
+  
+  cd "$HOME/Library/Application Support/Sublime Text 2/Installed Packages"
   curl "https://sublime.wbond.net/Package%20Control.sublime-package" -o "Package Control.sublime-package"
 
   cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Default"
   curl "http://flatironschool.s3.amazonaws.com/curriculum/resources/environment/themes/Solarized%20Flatiron.zip" -o "Solarized Flatiron.zip"
   tar -zxvf "Solarized Flatiron.zip"
   rm "Solarized Flatiron.zip"
+  
+  cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Default"
+  sed -i '' "s/\"tab_size\": 4,/\"tab_size\": 2,/g" Preferences.sublime-settings
+  sed -i '' "s/\"translate_tabs_to_spaces\": false,/\"translate_tabs_to_spaces\": true,/g" Preferences.sublime-settings
 }
 
 function getGitconfig {
@@ -109,13 +114,13 @@ function getGitconfig {
   sed -i '' "s/<YOUR HOME DIRECTORY>/$USER/g" .gitconfig
 
   printf 'Enter your GitHub username: '
-  read username
+  read username < /dev/tty
 
   printf 'Enter your GitHub email address: '
-  read email
+  read email < /dev/tty
 
   printf 'Enter your GitHub API key (set one up at https://github.com/settings/applications): '
-  read apikey
+  read apikey < /dev/tty
 
   sed -i '' "s/<github username>/$username/g" .gitconfig
   sed -i '' "s/<API token>/$apikey/g" .gitconfig
@@ -163,16 +168,21 @@ function setupDirStructure {
   mkdir -p Development/code
 }
 
-copyBashProfile
-getCommandLineTools
-installCommandLineTools
-installHomebrew
-installGit
-installSqlite
-installRVM
-getSublime
-installSublime
+function completeSetup {
+  echo "Done!"
+}
+
+#copyBashProfile
+#getCommandLineTools
+#installCommandLineTools
+#installHomebrew
+#installGit
+#installSqlite
+#installRVM
+#getSublime
+#installSublime
 getGitconfig
 setupGemrc
 getIrbrc
 setupDirStructure
+completeSetup
