@@ -9,6 +9,15 @@ function editSudoers {
   rm edit_sudoers.sh
 }
 
+function restoreSudoers {
+  echo "Cleaning up..."
+  cd ~
+
+  curl "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/restore_sudoers.sh" -o "restore_sudoers.sh"
+  sudo ./restore_sudoers.sh
+  rm restore_sudoers.sh
+}
+
 function copyBashProfile {
   echo 'Getting Flatiron School .bash_profile...'
   cd ~
@@ -181,18 +190,19 @@ function completeSetup {
   echo "Done!"
 }
 
-#editSudoers
-#copyBashProfile
-#getCommandLineTools
-#installCommandLineTools
-#installHomebrew
-#installGit
-#installSqlite
-#installRVM
-#getSublime
-#installSublime
+editSudoers
+copyBashProfile
+getCommandLineTools
+installCommandLineTools
+installHomebrew
+installGit
+installSqlite
+installRVM
+getSublime
+installSublime
 getGitconfig
 setupGemrc
 getIrbrc
 setupDirStructure
+restoreSudoers
 completeSetup
