@@ -9,7 +9,6 @@ function copyBashProfile {
   fi
 
   curl "https://raw.githubusercontent.com/flatiron-school/dotfiles/master/bash_profile" -o ".bash_profile"
-  source $HOME/.bash_profile
 }
 
 function getCommandLineTools {
