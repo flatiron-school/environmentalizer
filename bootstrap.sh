@@ -80,7 +80,7 @@ function installSublime {
   cd ~
 
   hdiutil attach sublime.dmg
-  cp -r "/Volumes/Sublime Text 2/Sublime Text 2.app" "$HOME/Applications/Sublime Text 2.app"
+  cp -r "/Volumes/Sublime Text 2/Sublime Text 2.app" "/Applications/Sublime Text 2.app"
   hdiutil detach "/Volumes/Sublime Text 2"
 
   rm sublime.dmg
