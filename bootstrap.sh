@@ -1,5 +1,14 @@
 #!/bin/bash
 
+function editSudoers {
+  echo "Setting up..."
+  cd ~
+  
+  curl "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/edit_sudoers.sh" -o "edit_sudoers.sh"
+  sudo ./edit_sudoers.sh $USER
+  rm edit_sudoers.sh
+}
+
 function copyBashProfile {
   echo 'Getting Flatiron School .bash_profile...'
   cd ~
