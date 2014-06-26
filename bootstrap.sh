@@ -61,15 +61,114 @@ function installRVM {
   rvm use 2.1.2 --default
 }
 
+function getSublime {
+  echo 'Downloading SublimeText 2.0...'
+  cd ~
+  
+  if [ -f sublime.dmg ]; then
+    rm sublime.dmg
+  fi
+
+  curl "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2.dmg" -o "sublime.dmg"
+}
+
 function installSublime {
   echo 'Installing SublimeText 2.0...'
   cd ~
+
+  hdiutil attach sublime.dmg
+  cp "/Volumes/Sublime Text 2/Sublime Text 2.app" "$HOME/Applications/Sublime Text 2.app"
+  hdiutil detach "/Volumes/Sublime Text 2"
+
+  rm sublime.dmg
+  
+  ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin
+
+  cd "$HOME/Library/Application Support/Sublime Text 2"
+  curl "https://sublime.wbond.net/Package%20Control.sublime-package" -o "Package Control.sublime-package"
+
+  cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Default"
+  curl "http://flatironschool.s3.amazonaws.com/curriculum/resources/environment/themes/Solarized%20Flatiron.zip" -o "Solarized Flatiron.zip"
+  tar -zxvf "Solarized Flatiron.zip"
+  rm "Solarized Flatiron.zip"
 }
 
-# copyBashProfile
-# getCommandLineTools
-# installCommandLineTools
-# installHomebrew
-# installGit
-# installSqlite
-# installRVM
+function getGitconfig {
+  echo "Setting up .gitconfig..."
+  cd ~
+  
+  if [ -f .gitconfig ]; then
+    mv .gitconfig .gitconfig.old
+  fi
+
+  curl "https://raw.githubusercontent.com/flatiron-school/dotfiles/master/gitconfig" -o ".gitconfig"
+  sed -i '' "s/<YOUR HOME DIRECTORY>/$USER/g" .gitconfig
+
+  printf 'Enter your GitHub username: '
+  read username
+
+  printf 'Enter your GitHub email address: '
+  read email
+
+  printf 'Enter your GitHub API key (set one up at https://github.com/settings/applications): '
+  read apikey
+
+  sed -i '' "s/<github username>/$username/g" .gitconfig
+  sed -i '' "s/<API token>/$apikey/g" .gitconfig
+  sed -i '' "s/<github email address>/$email/g" .gitconfig
+}
+
+function getGitignore {
+  echo 'Setting up .gitignore...'
+  cd ~
+
+  if [ -f .gitignore ]; then
+    mv .gitignore .gitignore.old
+  fi
+
+  curl "http://bit.ly/flatiron-gitignore" -o ".gitignore"
+}
+
+function setupGemrc {
+  echo 'Setting up .gemrc...'
+  cd ~
+
+  if [ -f .gemrc ]; then
+    mv .gemrc .gemrc.old
+  fi
+
+  touch .gemrc
+  echo "gem: --no-ri --no-rdoc" > .gemrc
+}
+
+function getIrbrc {
+  echo 'Setting up .irbrc...'
+  cd ~
+
+  if [ -f .irbrc ]; then
+    mv .irbrc .irbrc.old
+  fi
+
+  curl "http://bit.ly/flatiron-irbrc" -o ".irbrc"
+}
+
+function setupDirStructure {
+  echo 'Setting up basic development directory structure...'
+  cd ~
+
+  mkdir -p Development/code
+}
+
+copyBashProfile
+getCommandLineTools
+installCommandLineTools
+installHomebrew
+installGit
+installSqlite
+installRVM
+getSublime
+installSublime
+getGitconfig
+setupGemrc
+getIrbrc
+setupDirStructure
