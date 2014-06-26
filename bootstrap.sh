@@ -20,7 +20,7 @@ function getCommandLineTools {
     rm cli_tools.dmg
   fi
 
-  curl "http://bit.ly/flatiron-gcc" -o "cli_tools.dmg"
+  curl "http://flatiron-school.s3.amazonaws.com/software/command_line_tools_os_x_mavericks_for_xcode__late_october_2013.dmg" -o "cli_tools.dmg"
 }
 
 function installCommandLineTools {
