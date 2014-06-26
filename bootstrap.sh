@@ -192,14 +192,14 @@ function completeSetup {
   echo "Done!"
 }
 
-#editSudoers
-#copyBashProfile
-#getCommandLineTools
-#installCommandLineTools
-#installHomebrew
-#installGit
-#installSqlite
-#installRVM
+editSudoers
+copyBashProfile
+getCommandLineTools
+installCommandLineTools
+installHomebrew
+installGit
+installSqlite
+installRVM
 getSublime
 installSublime
 getGitconfig
