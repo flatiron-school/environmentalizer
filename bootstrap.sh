@@ -201,9 +201,9 @@ function completeSetup {
 #installRVM
 getSublime
 installSublime
-#getGitconfig
-#setupGemrc
-#getIrbrc
-#setupDirStructure
-#restoreSudoers
-#completeSetup
+getGitconfig
+setupGemrc
+getIrbrc
+setupDirStructure
+restoreSudoers
+completeSetup
