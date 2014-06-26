@@ -106,7 +106,7 @@ function installSublime {
   rm sublime.dmg
   
   sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin
-  subl < /dev/tty
+  open "/Applications/Sublime Text 2.app"
   killall "Sublime Text 2"
   
   cd "$HOME/Library/Application Support/Sublime Text 2/Installed Packages"
