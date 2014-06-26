@@ -168,15 +168,15 @@ function setupDirStructure {
   mkdir -p Development/code
 }
 
-copyBashProfile
-getCommandLineTools
-installCommandLineTools
-installHomebrew
-installGit
-installSqlite
-installRVM
-getSublime
-installSublime
+#copyBashProfile
+#getCommandLineTools
+#installCommandLineTools
+#installHomebrew
+#installGit
+#installSqlite
+#installRVM
+#getSublime
+#installSublime
 getGitconfig
 setupGemrc
 getIrbrc
