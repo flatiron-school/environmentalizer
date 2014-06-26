@@ -177,7 +177,7 @@ function getIrbrc {
     mv .irbrc .irbrc.old
   fi
 
-  curl "http://bit.ly/flatiron-irbrc" -o ".irbrc"
+  curl "https://gist.githubusercontent.com/loganhasson/f9fe9a73a1839ba1ef4a/raw/f65cef4fd4ac12d832e109eaca477c5b2dc686b0/.irbrc" -o ".irbrc"
 }
 
 function setupDirStructure {
