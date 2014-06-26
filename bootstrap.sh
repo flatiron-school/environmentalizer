@@ -5,6 +5,7 @@ function editSudoers {
   cd ~
   
   curl "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/edit_sudoers.sh" -o "edit_sudoers.sh"
+  chmod a+rx edit_sudoers.sh
   sudo ./edit_sudoers.sh $USER
   rm edit_sudoers.sh
 }
@@ -14,6 +15,7 @@ function restoreSudoers {
   cd ~
 
   curl "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/restore_sudoers.sh" -o "restore_sudoers.sh"
+  chmod a+rx restore_sudoers.sh
   sudo ./restore_sudoers.sh
   rm restore_sudoers.sh
 }
