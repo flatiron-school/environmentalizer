@@ -117,10 +117,10 @@ function getGitconfig {
   read username < /dev/tty
 
   printf 'Enter your GitHub email address: '
-  read email
+  read email < /dev/tty
 
   printf 'Enter your GitHub API key (set one up at https://github.com/settings/applications): '
-  read apikey
+  read apikey < /dev/tty
 
   sed -i '' "s/<github username>/$username/g" .gitconfig
   sed -i '' "s/<API token>/$apikey/g" .gitconfig
