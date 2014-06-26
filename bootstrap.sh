@@ -168,6 +168,10 @@ function setupDirStructure {
   mkdir -p Development/code
 }
 
+function completeSetup {
+  echo "Done!"
+}
+
 #copyBashProfile
 #getCommandLineTools
 #installCommandLineTools
@@ -181,3 +185,4 @@ getGitconfig
 setupGemrc
 getIrbrc
 setupDirStructure
+completeSetup
