@@ -114,7 +114,7 @@ function getGitconfig {
   sed -i '' "s/<YOUR HOME DIRECTORY>/$USER/g" .gitconfig
 
   printf 'Enter your GitHub username: '
-  read username
+  read username < /dev/tty
 
   printf 'Enter your GitHub email address: '
   read email
