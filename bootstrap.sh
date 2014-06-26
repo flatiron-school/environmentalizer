@@ -85,7 +85,7 @@ function installSublime {
 
   rm sublime.dmg
   
-  ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin
+  sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin
 
   cd "$HOME/Library/Application Support/Sublime Text 2"
   curl "https://sublime.wbond.net/Package%20Control.sublime-package" -o "Package Control.sublime-package"
