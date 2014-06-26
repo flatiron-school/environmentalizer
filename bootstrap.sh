@@ -181,6 +181,7 @@ function completeSetup {
   echo "Done!"
 }
 
+#editSudoers
 #copyBashProfile
 #getCommandLineTools
 #installCommandLineTools
