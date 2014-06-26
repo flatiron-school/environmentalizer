@@ -96,6 +96,10 @@ function installSublime {
   curl "http://flatironschool.s3.amazonaws.com/curriculum/resources/environment/themes/Solarized%20Flatiron.zip" -o "Solarized Flatiron.zip"
   tar -zxvf "Solarized Flatiron.zip"
   rm "Solarized Flatiron.zip"
+  
+  cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Default"
+  sed -i '' "s/\"tab_size\": 4,/\"tab_size\": 2,/g" Preferences.sublime-settings
+  sed -i '' "s/\"translate_tabs_to_spaces\": false,/\"translate_tabs_to_spaces\": true,/g" Preferences.sublime-settings
 }
 
 function getGitconfig {
