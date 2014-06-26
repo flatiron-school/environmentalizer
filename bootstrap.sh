@@ -8,7 +8,7 @@ function copyBashProfile {
     mv .bash_profile .bash_profile.old
   fi
 
-  curl "http://bit.ly/flatiron-school-bash-profile" -o ".bash_profile"
+  curl "https://raw.githubusercontent.com/flatiron-school/dotfiles/master/bash_profile" -o ".bash_profile"
   source $HOME/.bash_profile
 }
 
