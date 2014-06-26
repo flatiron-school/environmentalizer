@@ -89,7 +89,7 @@ function installSublime {
   subl
   killall "Sublime Text 2"
   
-  cd "$HOME/Library/Application Support/Sublime Text 2"
+  cd "$HOME/Library/Application Support/Sublime Text 2/Installed Packages"
   curl "https://sublime.wbond.net/Package%20Control.sublime-package" -o "Package Control.sublime-package"
 
   cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Default"
