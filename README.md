@@ -29,6 +29,12 @@ environment. It assumes a fresh install of OS X 10.9 (Mavericks).
   * admin:public_key
   * gist
 
+## Notes
+
+1. You'll need to run this script from an account with admin status. (DO NOT prepend `sudo` to the command below.)
+2. When the script first runs, you'll need to enter your admin password once.
+3. During installation, Sublime Text will open for a few seconds and then close automatically. Do not close it yourself. This step is required for some important directories to be created.
+
 ## Usage
 
 `curl -Lo- "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/bootstrap.sh" | bash`
