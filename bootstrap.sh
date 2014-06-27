@@ -113,6 +113,7 @@ function installSublime {
   rm "Solarized Flatiron.zip"
   
   cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Default"
+  sed -i '' "s/\"color_scheme\": \"Packages/Color Scheme - Default/Monokai.tmTheme\",/\"color_scheme\": \"Packages/Color Scheme - Default/Solarized Light (Flatiron).tmTheme\",/g" Preferences.sublime-settings
   sed -i '' "s/\"tab_size\": 4,/\"tab_size\": 2,/g" Preferences.sublime-settings
   sed -i '' "s/\"translate_tabs_to_spaces\": false,/\"translate_tabs_to_spaces\": true,/g" Preferences.sublime-settings
 }
