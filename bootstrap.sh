@@ -140,6 +140,14 @@ function getGitconfig {
   sed -i '' "s/<github username>/$username/g" .gitconfig
   sed -i '' "s/<API token>/$apikey/g" .gitconfig
   sed -i '' "s/<github email address>/$email/g" .gitconfig
+
+  if [ ! -f .ssh/id_rsa.pub ]; then
+    ssh-keygen -t rsa -N '' -C "$username@github" -f "$HOME/.ssh/id_rsa"
+  fi
+  
+  sshkey=$(cat $HOME/.ssh/id_rsa.pub)
+
+  curl -s -u "$username:$apikey" https://api.github.com/user/keys -d "{\"title\":\"$username@github\",\"key\":\"$sshkey\"}"
 }
 
 function getGitignore {
