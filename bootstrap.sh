@@ -118,7 +118,7 @@ function installSublime {
 }
 
 function getGitconfig {
-  echo "Setting up .gitconfig..."
+  echo "Setting up .gitconfig and GitHub SSH Key..."
   cd ~
   
   if [ -f .gitconfig ]; then
