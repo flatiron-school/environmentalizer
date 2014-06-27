@@ -1,5 +1,7 @@
 #!/bin/bash
 
+trap restoreSudoers INT
+
 function editSudoers {
   echo "Setting up..."
   cd ~
