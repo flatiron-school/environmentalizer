@@ -16,6 +16,13 @@ environment. It assumes a fresh install of OS X 10.9 (Mavericks).
 9. SSH Key for GitHub 
 10. A simple directory structure for well-organized code
 
+## What You Need Before You Begin
+
+1. Know your admin password (you'll need to enter it once when the script first runs)
+2. Know your GitHub username
+3. Know the email address associated with your GitHub account
+4. A personal access api token for GitHub. You can create one here: [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new). The name doesn't matter.
+
 ## Usage
 
 `curl -Lo- "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/bootstrap.sh" | bash`
