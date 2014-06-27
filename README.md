@@ -21,7 +21,13 @@ environment. It assumes a fresh install of OS X 10.9 (Mavericks).
 1. Know your admin password (you'll need to enter it once when the script first runs)
 2. Know your GitHub username
 3. Know the email address associated with your GitHub account
-4. A personal access api token for GitHub. You can create one here: [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new). The name doesn't matter.
+4. A personal access api token for GitHub. You can create one here: [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new). The name doesn't matter. You *must* select the following scopes (at least):
+  * repo
+  * public_repo
+  * write:public_key
+  * user
+  * admin:public_key
+  * gist
 
 ## Usage
 
