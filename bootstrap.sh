@@ -57,11 +57,21 @@ function installHomebrew {
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 }
 
+function checkForAndInstallHomebrew {
+  echo 'Checking if Homebrew is installed...'
+  cd ~
+  
+  if ! type brew 2&> /dev/null; then
+    installHomebrew
+  fi
+}
+
 function installGit {
   echo 'Installing Git...'
   cd ~
   source $HOME/.bash_profile
-
+  
+  checkForAndInstallHomebrew
   brew install git
 }
 
@@ -69,6 +79,7 @@ function installSqlite {
   echo 'Installing SQlite3...'
   cd ~
 
+  checkForAndInstallHomebrew
   brew install sqlite3
 }
 
@@ -103,6 +114,7 @@ function installSublime {
 
   rm sublime.dmg
   
+  checkForAndInstallHomebrew
   sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin
   open "/Applications/Sublime Text 2.app" && sleep 3 && killall "Sublime Text 2"
   
@@ -202,7 +214,7 @@ editSudoers
 copyBashProfile
 getCommandLineTools
 installCommandLineTools
-installHomebrew
+checkFofAndInstallHomebrew
 installGit
 installSqlite
 installRVM
