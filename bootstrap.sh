@@ -5,7 +5,7 @@ trap restoreSudoers INT
 function editSudoers {
   echo "Setting up..."
   cd ~
-  
+
   curl "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/edit_sudoers.sh" -o "edit_sudoers.sh"
   chmod a+rx edit_sudoers.sh && sudo ./edit_sudoers.sh $USER && rm edit_sudoers.sh
 }
@@ -21,7 +21,7 @@ function restoreSudoers {
 function copyBashProfile {
   echo 'Getting Flatiron School .bash_profile...'
   cd ~
-  
+
   if [ -f .bash_profile ]; then
     mv .bash_profile .bash_profile.old
   fi
@@ -54,13 +54,13 @@ function installHomebrew {
   echo 'Installing Homebrew...'
   cd ~
 
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
 function checkForAndInstallHomebrew {
   echo 'Checking if Homebrew is installed...'
   cd ~
-  
+
   if ! type brew 2&> /dev/null; then
     installHomebrew
   fi
@@ -70,7 +70,7 @@ function installGit {
   echo 'Installing Git...'
   cd ~
   source $HOME/.bash_profile
-  
+
   checkForAndInstallHomebrew
   brew install git
 }
@@ -96,7 +96,7 @@ function installRVM {
 function getSublime {
   echo 'Downloading SublimeText 2.0...'
   cd ~
-  
+
   if [ -f sublime.dmg ]; then
     rm sublime.dmg
   fi
@@ -113,11 +113,11 @@ function installSublime {
   hdiutil detach "/Volumes/Sublime Text 2"
 
   rm sublime.dmg
-  
+
   checkForAndInstallHomebrew
   sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin
   open "/Applications/Sublime Text 2.app" && sleep 3 && killall "Sublime Text 2"
-  
+
   cd "$HOME/Library/Application Support/Sublime Text 2/Installed Packages"
   curl "https://sublime.wbond.net/Package%20Control.sublime-package" -o "Package Control.sublime-package"
 
@@ -125,7 +125,7 @@ function installSublime {
   curl "http://flatironschool.s3.amazonaws.com/curriculum/resources/environment/themes/Solarized%20Flatiron.zip" -o "Solarized Flatiron.zip"
   tar -zxvf "Solarized Flatiron.zip"
   rm "Solarized Flatiron.zip"
-  
+
   cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Default"
   sed -i '' "s/\"color_scheme\": \"Packages\/Color Scheme - Default\/Monokai.tmTheme\",/\"color_scheme\": \"Packages\/Color Scheme - Default\/Solarized Light (Flatiron).tmTheme\",/g" Preferences.sublime-settings
   sed -i '' "s/\"tab_size\": 4,/\"tab_size\": 2,/g" Preferences.sublime-settings
@@ -135,7 +135,7 @@ function installSublime {
 function getGitconfig {
   echo "Setting up .gitconfig and GitHub SSH Key..."
   cd ~
-  
+
   if [ -f .gitconfig ]; then
     mv .gitconfig .gitconfig.old
   fi
@@ -159,7 +159,7 @@ function getGitconfig {
   if [ ! -f .ssh/id_rsa.pub ]; then
     ssh-keygen -t rsa -N '' -C "$username@github" -f "$HOME/.ssh/id_rsa"
   fi
-  
+
   sshkey=$(cat $HOME/.ssh/id_rsa.pub)
 
   curl -s -u "$username:$apikey" https://api.github.com/user/keys -d "{\"title\":\"$username@github\",\"key\":\"$sshkey\"}"
