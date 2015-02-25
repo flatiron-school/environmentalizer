@@ -3,6 +3,8 @@
 installation_list=($(cat ./10.10/installation.list))
 
 function checkInstallation {
+  echo "Checking for $1..."
+
   installation=$(./10.10/$1/check.sh)
 
   if [[ ${installation} =~ ^.*installed$ ]]; then
