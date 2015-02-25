@@ -6,9 +6,9 @@ if [[ $os_version =~ ^10\.9|10\.[0-9]*$ ]] || [[ $os_version =~ ^10\.9|10$ ]]; t
   echo 'Picking correct bootstrap script...'
 
   if [[ $os_version =~ ^10\.9.*$ ]]; then
-    ./bootstrap.10.9.sh
+    ./10.9/bootstrap.10.9.sh
   else
-    ./bootstrap.10.10.sh
+    ./10.10/bootstrap.10.10.sh
   fi
 else
   echo 'Not a supported OS X version'
