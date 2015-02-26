@@ -1,6 +1,9 @@
 #!/bin/bash
 
-installation_list=($(cat ./10.10/installation.list))
+installation_checklist=($(cat ./10.10/installation.list))
+checklist_length=${#installation_checklist[@]}
+already_installed=()
+to_be_installed=()
 
 function checkInstallation {
   echo "Checking for $1..."
@@ -14,13 +17,15 @@ function checkInstallation {
   fi
 }
 
-index=0
-while [ -n "${installation_list[index]}" ]; do
-  checkInstallation ${installation_list[index]}
+for (( i=0; i<${checklist_length}; i++ )); do
+  checkInstallation ${installation_checklist[i]}
 
   if [ "$?" -eq "0" ]; then
-    installation_list=(${installation_list[@]:0:$index} ${installation_list[@]:$(($index + 1))})
+    already_installed[${#already_installed[@]}]=${installation_checklist[i]}
+  else
+    to_be_installed[${#to_be_installed[@]}]=${installation_checklist[i]}
   fi
-
-  index=$(( $index + 1 ))
 done
+
+echo "To Be Installed: ${#to_be_installed[@]}"
+echo "Already Installed: ${#already_installed[@]}"
