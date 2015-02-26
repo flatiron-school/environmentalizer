@@ -63,3 +63,9 @@ Environmentalizer utilizes [Bats (Bash Automated Testing System)](https://github
 3. All files need the `#!/usr/bin/env bats` shebang at the top
 4. See a sample in `test/sample.bats`
 5. For more documentation, visit the (Bats Readme)[https://github.com/sstephenson/bats/blob/master/README.md]
+
+## TODO
+
+1. Extract 'check if file exists and if it has this content' logic into
+   reusable function
+2. Write tests
