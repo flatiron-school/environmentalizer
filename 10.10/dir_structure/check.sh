@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo 'Checking Directory Structure...'
+if [ -d "$HOME/Development/code" ]; then
+  echo 'installed'
+fi
