@@ -1,9 +1,5 @@
 #!/bin/bash
 
-echo 'Checking PostgreSQL...'
-
-# check gem list | grep pg (non empty)
-
 if [ -n "$(brew ls --versions postgresql 2> /dev/null)" ] && \
    [[ $(which postgres) =~ ^/usr/local/bin/postgres$ ]] && \
    [[ $(postgres --version 2> /dev/null) =~ ^9\.3|4.*$ ]] && \
