@@ -13,7 +13,7 @@ environment. It assumes a fresh install of OS X 10.9 (Mavericks).
 6. RVM and Ruby 2.1.2
 7. Sublime Text 2.0 with Package Control, Solarized Theme, and proper tab defaults
 8. Sensible `.gitconfig`, `.gitignore`, `.gemrc`, and `.irbrc` files
-9. SSH Key for GitHub 
+9. SSH Key for GitHub
 10. A simple directory structure for well-organized code
 
 ## What You Need Before You Begin
@@ -38,3 +38,28 @@ environment. It assumes a fresh install of OS X 10.9 (Mavericks).
 ## Usage
 
 `curl -Lo- "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/bootstrap.sh" | bash`
+
+## Testing
+
+Environmentalizer utilizes [Bats (Bash Automated Testing System)](https://github.com/sstephenson/bats) for testing.
+
+### Installation
+
+1. `$ git clone https://github.com/sstephenson/bats`
+2. `$ cd bats`
+3. `$ ./install.sh /usr/local`
+
+### Use
+
+#### Running Tests
+
+1. Run tests with `$ bats test`
+2. Alternatively, run `$ bin/test`
+
+#### Writing Tests
+
+1. Add all test files to the `test` directory
+2. Test files should have the `.bats` extension
+3. All files need the `#!/usr/bin/env bats` shebang at the top
+4. See a sample in `test/sample.bats`
+5. For more documentation, visit the (Bats Readme)[https://github.com/sstephenson/bats/blob/master/README.md]
