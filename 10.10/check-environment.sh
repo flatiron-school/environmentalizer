@@ -6,13 +6,15 @@ already_installed=()
 to_be_installed=()
 
 function checkInstallation {
-  echo "Checking for $1..."
+  printf "Checking for $1... "
 
   installation=$(./10.10/$1/check.sh)
 
   if [[ ${installation} =~ ^.*installed$ ]]; then
+    echo -e "\033[34;32minstalled\033[0m"
     return 0
   else
+    echo -e "\033[1;31mnot installed\033[0m"
     return 1
   fi
 }
