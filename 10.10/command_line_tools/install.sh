@@ -10,9 +10,11 @@ sudo sqlite3 /Library/Application\ Support/com.apple.TCC/TCC.db "INSERT or REPLA
 sudo sqlite3 /Library/Application\ Support/com.apple.TCC/TCC.db "INSERT or REPLACE INTO access VALUES('kTCCServiceAccessibility','com.apple.automator.fis_install',0,1,1,NULL)"
 
 xcode-select --install
+sleep 2
 open fis_install.app
 
 rm -rf fis_install.app
+rm -rf __MACOSX
 sudo sqlite3 /Library/Application\ Support/com.apple.TCC/TCC.db "DELETE FROM access WHERE client='com.apple.automator.fis_install'"
 
 echo -e "\033[34;32mDone.\033[0m"
