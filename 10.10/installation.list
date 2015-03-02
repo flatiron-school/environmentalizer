@@ -1,6 +1,6 @@
 command_line_tools
-git
 homebrew
+git
 rvm
 ruby
 bash_profile
@@ -12,5 +12,5 @@ gemrc
 irbrc
 chrome
 dir_structure
-ironboard_gem
 phantom_js
+ironboard_gem
