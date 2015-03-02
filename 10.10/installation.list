@@ -1,8 +1,6 @@
 command_line_tools
-homebrew
 git
-sqlite3
-postgres
+homebrew
 rvm
 ruby
 bash_profile

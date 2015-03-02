@@ -34,6 +34,6 @@ echo "Already Installed: ${#already_installed[@]}"
 
 to_be_installed_length=${#to_be_installed[@]}
 
-for (( i=0; i<${to_be_installed_length}; i++ )); do
-  ./10.10/${to_be_installed[i]}/install.sh
-done
+#for (( i=0; i<${to_be_installed_length}; i++ )); do
+  #./10.10/${to_be_installed[i]}/install.sh
+#done
