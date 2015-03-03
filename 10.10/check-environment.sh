@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 installation_checklist=($(cat ./10.10/installation.list))
 checklist_length=${#installation_checklist[@]}
 already_installed=()
