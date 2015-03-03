@@ -38,6 +38,7 @@ to_be_installed_length=${#to_be_installed[@]}
 
 if [ "$1" -eq "install" ]; then
   for (( i=0; i<${to_be_installed_length}; i++ )); do
+    # TODO: Handle this better...this is garbaggio
     if [ "${to_be_installed[i]}" -eq "command_line_tools" ]; then
       continue
     else
