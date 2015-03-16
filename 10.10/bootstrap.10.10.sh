@@ -9,6 +9,7 @@ installation_checklist=($(cat ./10.10/installation.list))
 checklist_length=${#installation_checklist[@]}
 already_installed=()
 to_be_installed=()
+is_installed=false
 
 function checkInstallation {
   printf "Checking for $1... "
@@ -17,19 +18,19 @@ function checkInstallation {
 
   if [[ ${installation} =~ ^.*installed$ ]]; then
     echo -e "\033[34;32minstalled\033[0m"
-    return 0
+    is_installed=true
   else
     echo -e "\033[1;31mnot installed\033[0m"
-    return 1
+    is_installed=false
   fi
 }
 
 for (( i=0; i<${checklist_length}; i++ )); do
   checkInstallation ${installation_checklist[i]}
 
-  if [ "$?" -eq "0" ]; then
+  if [ $is_installed == true ]; then # if checkInstallation returned true (0)
     already_installed[${#already_installed[@]}]=${installation_checklist[i]}
-  else
+  else  # if checkInstallation returned false (1)
     to_be_installed[${#to_be_installed[@]}]=${installation_checklist[i]}
   fi
 done
@@ -47,7 +48,9 @@ if [ "$1" -eq "install" ]; then
     if [ "${to_be_installed[i]}" -eq "command_line_tools" ]; then
       continue
     else
-      ./10.10/${to_be_installed[i]}/install.sh
+      # actually installs the code
+      # ./10.10/${to_be_installed[i]}/install.sh
+      echo $to_be_installed[i]
     fi
   done
 fi
