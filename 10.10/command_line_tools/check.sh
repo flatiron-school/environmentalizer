@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # TODO: Make this actually work
-if [ -n "$(which gcc)" ] && [ -f '/usr/bin/gcc' ] && \
-   [ -d '/Applications/Xcode.app' ]
-then
+if [ -n "$(which gcc)" ] && [ -f '/usr/bin/gcc' ]; then
   echo 'installed'
 else
-  exit 1
+  echo 'pleas install command line tools'
+  # exit 1
 fi
