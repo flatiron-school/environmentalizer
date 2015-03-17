@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "./config/environment.sh"
+
 echo 'Running script for 10.10.x'
 echo 'Checking existing environment...'
 
@@ -10,20 +12,6 @@ checklist_length=${#installation_checklist[@]}
 already_installed=()
 to_be_installed=()
 is_installed=false
-
-function checkInstallation {
-  printf "Checking for $1... "
-
-  installation=$(./10.10/$1/check.sh)
-
-  if [[ ${installation} =~ ^.*installed$ ]]; then
-    echo -e "\033[34;32minstalled\033[0m"
-    is_installed=true
-  else
-    echo -e "\033[1;31mnot installed\033[0m"
-    is_installed=false
-  fi
-}
 
 for (( i=0; i<${checklist_length}; i++ )); do
   checkInstallation ${installation_checklist[i]}
@@ -42,15 +30,10 @@ to_be_installed_length=${#to_be_installed[@]}
 
 echo 'Setting up environment...'
 
-if [ "$1" -eq "install" ]; then
+if [[ "$1" -eq "install" ]]; then
   for (( i=0; i<${to_be_installed_length}; i++ )); do
-    # TODO: Handle this better...this is garbaggio
-    if [ "${to_be_installed[i]}" -eq "command_line_tools" ]; then
-      continue
-    else
-      # actually installs the code
-      # ./10.10/${to_be_installed[i]}/install.sh
-      echo $to_be_installed[i]
-    fi
+    ./10.10/${to_be_installed[i]}/install.sh
+    echo ${to_be_installed[i]}
   done
+  echo 'Done!'
 fi
