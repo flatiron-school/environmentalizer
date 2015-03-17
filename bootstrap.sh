@@ -4,12 +4,7 @@ os_version=$(sw_vers -productVersion)
 
 if [[ $os_version =~ ^10\.9|10\.[0-9]*$ ]] || [[ $os_version =~ ^10\.9|10$ ]]; then
   echo 'Determining OS X version...'
-
-  if [[ $os_version =~ ^10\.9.*$ ]]; then
-    ./10.9/bootstrap.10.9.sh
-  else
-    ./10.10/bootstrap.10.10.sh
-  fi
+  ./shared/bootstrap.sh
 else
   echo 'Not a supported OS X version'
   exit 1
