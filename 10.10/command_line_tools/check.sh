@@ -4,6 +4,6 @@
 if [ -n "$(which gcc)" ] && [ -f '/usr/bin/gcc' ]; then
   echo 'installed'
 else
-  echo 'pleas install command line tools'
-  # exit 1
+  echo 'please install command line tools'
+  exit 1
 fi
