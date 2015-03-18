@@ -36,9 +36,9 @@ function checkInstallation {
 for (( i=0; i<${checklist_length}; i++ )); do
   checkInstallation ${installation_checklist[i]}
 
-  if [ $is_installed == true ]; then # if checkInstallation returned true (0)
+  if [ $is_installed == true ]; then
     already_installed[${#already_installed[@]}]=${installation_checklist[i]}
-  else  # if checkInstallation returned false (1)
+  else
     to_be_installed[${#to_be_installed[@]}]=${installation_checklist[i]}
   fi
 done
