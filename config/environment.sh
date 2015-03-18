@@ -1,1 +1,0 @@
-source "./shared/check-installation.sh"

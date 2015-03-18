@@ -1,5 +1,2 @@
 #!/bin/bash
-
-echo -n 'Installing Command Line Tools...'
-
-xcode-select --install
+. ./shared/command_line_tools/install.sh
