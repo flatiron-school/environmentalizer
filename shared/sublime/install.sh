@@ -8,6 +8,7 @@ fi
 
 sublime_settings_path="$HOME/Library/Application Support/Sublime Text 3"
 sublime_color_theme_path="${sublime_settings_path}/Packages/Colorsublime-Themes"
+current_dir=$PWD
 
 echo -n 'Downloading...'
 curl "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203065.dmg" -o "sublime.dmg" >/dev/null 2>&1
@@ -32,6 +33,8 @@ echo -e "\033[34;32mDone.\033[0m"
 echo -n 'Installing Solarized color scheme...'
 mkdir "${sublime_color_theme_path}"
 curl "http://flatironschool.s3.amazonaws.com/curriculum/resources/environment/themes/Solarized%20Flatiron.zip" -o "${sublime_color_theme_path}/Solarized Flatiron.zip" >/dev/null 2>&1
+cd "${sublime_color_theme_path}"
 tar -zxvf "${sublime_color_theme_path}/Solarized Flatiron.zip"
-rm "${sublime_settings_path}/Solarized Flatiron.zip" "${sublime_settings_path}/Solarized Dark (Flatiron).terminal" "${sublime_settings_path}/Solarized Light (Flatiron).terminal"
+rm "Solarized Flatiron.zip" "Solarized Dark (Flatiron).terminal" "Solarized Light (Flatiron).terminal"
+cd "${current_dir}"
 echo -e "\033[34;32mDone.\033[0m"
