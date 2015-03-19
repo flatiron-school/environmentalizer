@@ -6,7 +6,7 @@ if [ -f sublime.dmg ]; then
   rm sublime.dmg
 fi
 
-sublime_settings_path="$HOME/Library/Application Support/Sublime Text 3/"
+sublime_settings_path="$HOME/Library/Application Support/Sublime Text 3"
 sublime_color_theme_path="${sublime_color_theme_path}"
 
 echo -n 'Downloading...'
