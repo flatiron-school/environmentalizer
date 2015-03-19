@@ -7,7 +7,7 @@ if [ -f sublime.dmg ]; then
 fi
 
 sublime_settings_path="$HOME/Library/Application Support/Sublime Text 3"
-sublime_color_theme_path="${sublime_color_theme_path}"
+sublime_color_theme_path="${sublime_color_theme_path}/Packages/Colorsublime-Themes"
 
 echo -n 'Downloading...'
 curl "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203065.dmg" -o "sublime.dmg" >/dev/null 2>&1
