@@ -9,8 +9,8 @@ else
   os_version=10.10
 fi
 
-echo 'Running script for ${os_version}.x'
-echo 'Checking existing environment...'
+echo "Running script for ${os_version}.x"
+echo "Checking existing environment..."
 
 check_for_clt_and_xcode
 errors_length=${#error_messages[@]} # error_messages is defined in shared/check_for_clt_and_xcode.sh
