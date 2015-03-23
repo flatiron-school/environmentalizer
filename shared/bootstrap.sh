@@ -28,18 +28,6 @@ else
   os_version=10.10
 fi
 
-if [ -n "$(which gcc)" ] && [ -f '/usr/bin/gcc' ] && \
-   [ -d '/Applications/Xcode.app' ]; then
-else
-  if [ $os_version = 10.9 ]; then
-  echo 'Please make sure Xcode and the command line tools are installed.'
-  else
-  echo 
-  fi
-  echo 'Once they are try installing again.'
-  exit 1
-fi
-
 function checkInstallation {
   printf "Checking for $1... "
 
