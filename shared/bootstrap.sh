@@ -3,6 +3,15 @@
 echo 'Running script for 10.10.x'
 echo 'Checking existing environment...'
 
+xcode-select -p; areCLTInstalled=$?
+xcodePath=$(mdfind "kind:app xcode")
+if [[ $areCLTInstalled -eq 0 ]] && [[ -n $xcodePath ]]; then
+  echo 'Xcode is installed'
+else
+  echo 'Please install Xcode from the App Store and the Command Line Tools to proceed.'
+  exit 1
+fi
+
 set -e
 
 installation_checklist=($(cat ./10.10/installation.list))
@@ -17,6 +26,18 @@ if [[ $os_version =~ ^10\.9.*$ ]]; then
   os_version=10.9
 else
   os_version=10.10
+fi
+
+if [ -n "$(which gcc)" ] && [ -f '/usr/bin/gcc' ] && \
+   [ -d '/Applications/Xcode.app' ]; then
+else
+  if [ $os_version = 10.9 ]; then
+  echo 'Please make sure Xcode and the command line tools are installed.'
+  else
+  echo 
+  fi
+  echo 'Once they are try installing again.'
+  exit 1
 fi
 
 function checkInstallation {
