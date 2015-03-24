@@ -22,7 +22,7 @@ rm sublime.dmg
 echo -e "\033[34;32mDone.\033[0m"
 
 echo -n 'Setting up symlink...'
-# sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin
+sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin
 open "/Applications/Sublime Text.app" && sleep 3 && killall "Sublime Text"
 echo -e "\033[34;32mDone.\033[0m"
 
