@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source $HOME/.rvm/scripts/rvm
-if [[ $(ruby --version 2> /dev/null) =~ ^ruby\ 2.*$ ]] && \
-   [[ $(which ruby) =~ ^/Users/.*/\.rvm/rubies/.*$ ]]
+if [[ -n $(which rvm) ]] && \
+   [[ -n $(rvm list 2>/dev/null | grep ruby-2. )]] || \
+   [[ $(which rvm) -eq '' ]]
 then
   echo 'installed'
 fi
