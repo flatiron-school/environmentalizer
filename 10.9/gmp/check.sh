@@ -1,2 +1,2 @@
 #!/bin/bash
-. ./shared/gpg/check.sh
+. ./shared/gmp/check.sh

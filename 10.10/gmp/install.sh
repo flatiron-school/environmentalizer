@@ -1,2 +1,2 @@
 #!/bin/bash
-. ./shared/gpg/install.sh
+. ./shared/gmp/install.sh
