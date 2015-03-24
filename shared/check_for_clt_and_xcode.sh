@@ -1,4 +1,4 @@
-xcode-select -p; are_cli_installed=$?
+xcode-select -p 1>&2 2> /dev/null; are_cli_installed=$?
 xcode_path=$(mdfind "kind:app xcode")
 xcode_license=$(xcodebuild 2>&1)
 error_messages=()
