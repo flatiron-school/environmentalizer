@@ -2,6 +2,7 @@
 
 echo 'Installing Ironboard gem...'
 
+source $HOME/.rvm/scripts/rvm
 gem sources -a http://flatiron:33west26@gems.flatironschool.com
 gem install ironboard
 
