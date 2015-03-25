@@ -63,6 +63,7 @@ echo 'Setting up environment...'
 
 if [[ "$1" -eq "install" ]]; then
   for (( i=0; i<${to_be_installed_length}; i++ )); do
+    # comment below in to actual run the install portions
     # ./10.10/${to_be_installed[i]}/install.sh
     echo ${to_be_installed[i]}
   done
