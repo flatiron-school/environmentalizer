@@ -7,8 +7,10 @@ if [[ $os_version =~ ^10\.9|10\.[0-9]*$ ]] || [[ $os_version =~ ^10\.9|10$ ]]; t
   echo 'Downloading source code...'
   cd ~
   curl -L "https://github.com/flatiron-labs/environmentalizer/archive/master.zip" > master.zip
-  unzip master.zip 1>&2 2> /dev/null
-  . ./environmentalizer-master/shared/bootstrap.sh
+  unzip master.zip 1>&2 2>/dev/null
+  cd environmentalizer-master
+  . ./shared/bootstrap.sh
+  cd ..
   rm -rf environmentalizer-master
   rm master.zip
 else
