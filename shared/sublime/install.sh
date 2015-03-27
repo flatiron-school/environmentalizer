@@ -11,7 +11,7 @@ sublime_color_theme_path="${sublime_settings_path}/Packages/Colorsublime-Themes"
 current_dir=$PWD
 
 echo -n 'Downloading...'
-curl "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203080.dmg" -o "sublime.dmg" >/dev/null 2>&1
+curl "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083.dmg" -o "sublime.dmg" >/dev/null 2>&1
 echo -e "\033[34;32mDone.\033[0m"
 
 echo -n 'Installing...'
