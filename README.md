@@ -37,7 +37,9 @@ environment. It assumes a fresh install of OS X 10.9 (Mavericks).
 
 ## Usage
 
-`curl -Lo- "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/bootstrap.sh" | bash`
+```shell
+curl -L "https://raw.githubusercontent.com/flatiron-labs/environmentalizer/master/runner.sh" | bash
+```
 
 ## Testing
 
