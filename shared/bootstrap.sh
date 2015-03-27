@@ -1,6 +1,4 @@
 #!/bin/bash
-echo $(pwd)
-exit 1
 source shared/check_for_clt_and_xcode.sh
 
 os_version=$(sw_vers -productVersion)
