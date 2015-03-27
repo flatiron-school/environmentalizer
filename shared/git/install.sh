@@ -2,7 +2,7 @@
 
 echo 'Installing git...'
 { # try
-  brew install git 2>/dev/null
+  brew install git 2>/dev/null &&
 } || { # catch
   brew update 1>&2 2>/dev/null && brew upgrade git 2>/dev/null
 }
