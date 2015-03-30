@@ -14,6 +14,7 @@ if [[ $os_version =~ ^10\.9|10\.[0-9]*$ ]] || [[ $os_version =~ ^10\.9|10$ ]]; t
   rm -rf environmentalizer-curl
   rm environmentalizer.zip
 else
-  echo 'Not a supported OS X version'
+  echo "\033[1;31mNot a supported OS X version\033[0m"
+  echo 'Please upgrade to OS X Mavericks or later to proceed'
   exit 1
 fi
