@@ -23,6 +23,7 @@ environment. It assumes a fresh install of OS X 10.9 (Mavericks) or OS X 10.10 (
 2. Know your GitHub username
 3. Know the email address associated with your GitHub account
 4. A personal access api token for GitHub. You can create one here: [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new). The name doesn't matter. You *MUST* select the `write:public_key` scope.
+5. You ___MUST___ to have pre-installed Xcode, accepted its license, and have the Command Line Tools.
 
 ## Notes
 
