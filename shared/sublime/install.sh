@@ -21,12 +21,8 @@ hdiutil detach "/Volumes/Sublime Text" > /dev/null
 rm sublime.dmg
 echo -e "\033[34;32mDone.\033[0m"
 
-echo -n 'Setting up symlink...'
-sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin
-open "/Applications/Sublime Text.app" && sleep 3 && killall "Sublime Text"
-echo -e "\033[34;32mDone.\033[0m"
-
 echo -n 'Installing Package Control...'
+open "/Applications/Sublime Text.app" && sleep 3 && killall "Sublime Text"
 curl "https://packagecontrol.io/Package%20Control.sublime-package" -o "${sublime_settings_path}/Installed Packages/Package Control.sublime-package" >/dev/null 2>&1
 curl "https://github.com/EnTeQuAk/dotfiles/blob/master/sublime-text-3/Installed%20Packages/0_package_control_loader.sublime-package?raw=true" -o "${sublime_settings_path}/Installed Packages/0_package_control_loader.sublime-package" >/dev/null 2>&1
 echo -e "\033[34;32mDone.\033[0m"

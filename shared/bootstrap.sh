@@ -17,7 +17,7 @@ errors_length=${#error_messages[@]} # error_messages is defined in shared/check_
 
 if [[ $errors_length -gt 0 ]]; then
   for (( i=0; i<${errors_length}; i++ )); do
-    echo "${error_messages[i]}"
+    echo "\033[1;31m${error_messages[i]}\033[0m"
   done
   exit 1
 fi
