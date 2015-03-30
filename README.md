@@ -1,7 +1,7 @@
 # Environmentalizer
 
 A bash script to quickly and easily bootstrap a well-setup programming
-environment. It assumes a fresh install of OS X 10.9 (Mavericks) or OS X 10.10 (Yosemite).
+environment. It assumes a fresh install of OS X 10.9 (Mavericks) or OS X 10.10 (Yosemite).  Any software already installed will be skipped.
 
 ## What It Sets Up
 

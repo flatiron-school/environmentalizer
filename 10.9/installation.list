@@ -7,6 +7,7 @@ ruby
 bash_profile
 sublime
 sublime_settings
+sublime_symlink
 gitconfig
 gitignore
 gemrc
