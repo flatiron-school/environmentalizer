@@ -45,7 +45,7 @@ function check_installation {
   fi
 }
 
-user_name=$(id -F)
+user_name=$(id -un)
 post_string="{\"state\":{\"user\":\"$user_name\""
 
 for (( i=0; i<${checklist_length}; i++ )); do
