@@ -1,6 +1,6 @@
 #!/bin/bash
 source shared/check_for_clt_and_xcode.sh
-source shared/post_state.sh
+# source shared/post_state.sh
 
 os_version=$(sw_vers -productVersion)
 
