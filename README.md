@@ -34,7 +34,7 @@ environment. It assumes a fresh install of OS X 10.9 (Mavericks) or OS X 10.10 (
 ## Usage
 
 ```shell
-curl -L "https://raw.githubusercontent.com/flatiron-labs/environmentalizer/master/runner.sh" | bash
+curl -L "https://raw.githubusercontent.com/flatiron-school/environmentalizer/master/runner.sh" | bash
 ```
 
 ## Testing
