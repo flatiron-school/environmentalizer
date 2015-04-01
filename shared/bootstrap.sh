@@ -1,8 +1,8 @@
 #!/bin/bash
-source shared/check_for_clt_and_xcode.sh
-source shared/check_single_installation.sh
-source shared/check_installation_list.sh
-source shared/curl_computer_state.sh
+source shared/helpers/check_for_clt_and_xcode.sh
+source shared/helpers/check_single_installation.sh
+source shared/helpers/check_installation_list.sh
+source shared/helpers/curl_computer_state.sh
 
 os_version=$(sw_vers -productVersion)
 
