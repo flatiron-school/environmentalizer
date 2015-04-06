@@ -46,9 +46,9 @@ echo 'Setting up environment...'
 
 if [[ ${#to_be_installed[@]} -gt 0 ]]; then
   for (( i=0; i<${to_be_installed_length}; i++ )); do
-    # "./${os_version}/${to_be_installed[i]}/install.sh"
+    "./${os_version}/${to_be_installed[i]}/install.sh"
     # for testing comment out above and comment in below
-    echo ${to_be_installed[i]}
+    # echo ${to_be_installed[i]}
   done
   curl_computer_state
 fi
