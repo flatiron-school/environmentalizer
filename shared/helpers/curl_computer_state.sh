@@ -17,5 +17,5 @@ function curl_computer_state {
   done
 
   post_string="$post_string}}"
-  curl -H -s "Content-type: application/json" -d "$post_string" http://environmentalizer-status.herokuapp.com/computer_states || echo "curl failed"
+  curl -s "Content-type: application/json" -d "$post_string" http://environmentalizer-status.herokuapp.com/computer_states || echo "curl failed"
 }
