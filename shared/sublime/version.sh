@@ -1,6 +1,6 @@
 #!/bin/bash
 function sublime_version {
-  if [[ $is_installed -eq true ]]; then
+  if $is_installed ; then
     if [[ -n $(mdfind kind:app "Sublime Text.app") ]]; then
       echo $(cat "/Applications/Sublime Text.app/Contents/Info.plist" | perl -lne 'print $& if /Build\s(\d.*?)\</' | perl -lne 'print $& if /(\d.*)[^<]/')
     else
