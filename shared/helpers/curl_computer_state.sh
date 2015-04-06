@@ -1,11 +1,12 @@
 function curl_computer_state {
+  . "./${os_version}/homebrew/check.sh" 1>&2 2> /dev/null
   post_string="{\"state\":{\"user\":\"$(id -un)\", \"osx_version\":\"$(sw_vers -productVersion)\""
 
   for (( i=0; i<${checklist_length}; i++ )); do
     software=${installation_checklist[i]}
     check_single_installation ${installation_checklist[i]} # sets is_installed variable to boolean
 
-    . ./${os_version}/${installation_checklist[i]}/version.sh # sources a function to call on the next line
+    . "./${os_version}/${installation_checklist[i]}/version.sh" # sources a function to call on the next line
     version_message=$(${software}_version)
 
     if [[ $version_message = true ]] || [[ $version_message = false ]]; then
