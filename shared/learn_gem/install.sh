@@ -2,7 +2,9 @@
 
 echo 'Installing Learn gem...'
 
-source_rvm
+if [[ -f $HOME/.rvm/scripts/rvm ]]; then
+  . $HOME/.rvm/scripts/rvm
+fi
 gem install learn-co
 
 echo -e "\033[34;32mDone.\033[0m"
