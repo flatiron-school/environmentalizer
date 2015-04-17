@@ -7,7 +7,7 @@ function curl_computer_state {
     check_single_installation ${installation_checklist[i]} # sets is_installed variable to boolean
 
     . "./${os_version}/${installation_checklist[i]}/version.sh" # sources a function to call on the next line
-    version_message=$(${software}_version)
+    version_message=$(${software}_version) # calls said function and stores return value in version_message
 
     if [[ $version_message = true ]] || [[ $version_message = false ]]; then
       post_string="$post_string,\"$software\":$version_message" # makes sure booleans are sent as booleans
