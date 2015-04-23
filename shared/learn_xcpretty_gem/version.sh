@@ -1,5 +1,5 @@
 #!/bin/bash
-function learn_gem_version {
+function learn_xcpretty_gem_version {
   if [[ -f $HOME/.rvm/scripts/rvm ]]; then
     . $HOME/.rvm/scripts/rvm
   fi
