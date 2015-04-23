@@ -5,7 +5,7 @@ function learn_gem_version {
   fi
 
   if $is_installed ; then
-    echo $(gem list | grep learn-co | perl -lne 'print $& if /(\d.*)[^\)]/')
+    echo $(gem list | grep learn-xcpretty | perl -lne 'print $& if /(\d.*)[^\)]/')
   else
     echo false
   fi
