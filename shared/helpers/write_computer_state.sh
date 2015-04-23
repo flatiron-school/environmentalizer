@@ -1,4 +1,4 @@
-function curl_computer_state {
+function write_computer_state {
   . "./${os_version}/homebrew/check.sh" 1>&2 2> /dev/null
   post_string="{\"state\":{\"user\":\"$(id -un)\", \"osx_version\":\"$(sw_vers -productVersion)\""
 
@@ -17,5 +17,6 @@ function curl_computer_state {
   done
 
   post_string="$post_string}}"
-  curl -s "Content-type: application/json" -d "$post_string" http://environmentalizer-status.herokuapp.com/computer_states 1>&2 2> /dev/null || echo "curl failed"
+
+  echo $post_string > "/tmp/${run_state}.json"
 }

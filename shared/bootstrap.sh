@@ -2,7 +2,7 @@
 source shared/helpers/check_for_clt_and_xcode.sh
 source shared/helpers/check_single_installation.sh
 source shared/helpers/check_installation_list.sh
-source shared/helpers/curl_computer_state.sh
+source shared/helpers/write_computer_state.sh
 
 os_version=$(sw_vers -productVersion)
 
@@ -35,7 +35,8 @@ is_installed=false
 version_message="" # used by check_version_for
 
 check_installation_list
-curl_computer_state 1>&2 2>/dev/null
+run_state="before"
+write_computer_state 1>&2 2>/dev/null
 
 echo "To Be Installed: ${#to_be_installed[@]}"
 echo "Already Installed: ${#already_installed[@]}"
@@ -50,5 +51,7 @@ if [[ ${#to_be_installed[@]} -gt 0 ]]; then
     # for testing comment out above and comment in below
     # echo ${to_be_installed[i]}
   done
-  curl_computer_state 1>&2 2>/dev/null
 fi
+
+run_state="after"
+write_computer_state 1>&2 2>/dev/null
