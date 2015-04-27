@@ -3,6 +3,8 @@
 sublime_two_settings="$HOME/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings"
 sublime_three_settings="$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
 
+echo 'Setting up Sublime Text settings' > /tmp/learninstall.step
+
 echo -n 'Setting up basic Sublime Text settings...'
 if [[ -f "${sublime_two_settings}" ]]; then
   sed -i '' "s/\"tab_size\": 4,/\"tab_size\": 2,/g" "${sublime_two_settings}"

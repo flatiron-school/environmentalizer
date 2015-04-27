@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo -n 'Setting up symlink...'
+echo 'Setting up Sublime Text symlink' > /tmp/learninstall.step
+
 if [[ -d "/Applications/Sublime Text.app" ]]; then
   sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin
 elif [[ -d "/Applications/Sublime Text 2.app" ]]; then

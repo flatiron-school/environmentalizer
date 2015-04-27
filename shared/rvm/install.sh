@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo 'Installing RVM...'
+echo 'Installing RVM' > /tmp/learninstall.step
+
 
 brew upgrade gmp 2> /dev/null
 brew unlink gnupg && brew link gnupg 1> /dev/null

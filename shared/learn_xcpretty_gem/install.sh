@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo 'Installing Learn XCPretty gem...'
+echo 'Installing Learn XCPretty gem' > /tmp/learninstall.step
 
 if [[ -f $HOME/.rvm/scripts/rvm ]]; then
   . $HOME/.rvm/scripts/rvm

@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo 'Installing Learn gem...'
+echo 'Installing Learn gem' > /tmp/learninstall.step
+
 
 if [[ -f $HOME/.rvm/scripts/rvm ]]; then
   . $HOME/.rvm/scripts/rvm
