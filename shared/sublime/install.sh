@@ -19,7 +19,7 @@ echo -e "\033[34;32mDone.\033[0m"
 echo -n 'Installing...'
 echo 'Installing Sublime Text' > /tmp/learninstall.step
 
-hdiutil attach sublime.dmg > /dev/null
+hdiutil attach -nobrowse sublime.dmg > /dev/null
 cp -r "/Volumes/Sublime Text/Sublime Text.app" "/Applications/Sublime Text.app"
 hdiutil detach "/Volumes/Sublime Text" > /dev/null
 rm sublime.dmg
