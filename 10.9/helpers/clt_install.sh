@@ -1,6 +1,6 @@
 #!/bin/bash
 xcode-select -p 1>&2 2> /dev/null; are_cli_installed=$?
-if [[ $are_cli_installed -eq 10 ]]; then
+if [[ $are_cli_installed -eq 0 ]]; then
     echo "INSTALLED"
 else
     cd ~
