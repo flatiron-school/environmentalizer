@@ -1,5 +1,7 @@
 # Environmentalizer
 
+## NOTE: At the moment, this script will not work when run by itself. It has been modified to work with an OS X companion app. To run as a stanalone script, please check out sha: cb2f79bb4b88a30251b2499191a8876fe8f7f496.
+
 A bash script to quickly and easily bootstrap a well-setup programming
 environment. It assumes a fresh install of OS X 10.9 (Mavericks) or OS X 10.10 (Yosemite).  Any software already installed will be skipped.
 
