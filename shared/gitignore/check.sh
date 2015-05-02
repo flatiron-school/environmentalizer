@@ -3,5 +3,7 @@
 if [ -f "$HOME/.gitignore" ] && \
    [[ -n $(cat "$HOME/.gitignore" 2>/dev/null | grep .DS_Store) ]]
 then
-  echo 'installed'
+  echo '1'
+else
+  echo '0'
 fi
