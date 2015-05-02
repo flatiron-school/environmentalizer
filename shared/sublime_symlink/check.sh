@@ -1,5 +1,7 @@
 #!/bin/bash
 
 if [[ -f /usr/local/bin/subl ]]; then
-  echo 'installed'
+  echo '1'
+else
+  echo '0'
 fi
