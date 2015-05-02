@@ -9,6 +9,8 @@ if [ -f "${sublime_two_settings}" ] || [ -f "${sublime_three_settings}" ]; then
      [ -n "$(cat "${sublime_three_settings}" 2>/dev/null | grep '\"tab_size\": 2')" ] && \
      [ -n "$(cat "${sublime_three_settings}" 2>/dev/null | grep '\"translate_tabs_to_spaces\": true')" ]
   then
-    echo 'installed'
+    echo '1'
+  else
+    echo '0'
   fi
 fi
