@@ -1,5 +1,7 @@
 #!/bin/bash
 
 if [ -d "$HOME/Development/code" ]; then
-  echo 'installed'
+  echo '1'
+else
+  echo '0'
 fi
