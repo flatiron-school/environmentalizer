@@ -1,5 +1,7 @@
 #!/bin/bash
 
 if [[ -f "$HOME/.gemrc" ]]; then
-  echo 'installed'
+  echo '1'
+else
+  echo '0'
 fi
