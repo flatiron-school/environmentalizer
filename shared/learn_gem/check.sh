@@ -7,5 +7,7 @@ fi
 if [ -n '$(which learn | grep "$HOME/\.rvm/gems/.*")' ] && \
    [ -n "$(gem which learn 2>/dev/null)" ]
 then
-  echo 'installed'
+  echo '1'
+else
+  echo '0'
 fi
