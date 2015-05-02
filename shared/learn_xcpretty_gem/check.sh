@@ -6,5 +6,7 @@ fi
 
 if [[ -n "$(which learn-xcpretty)" ]];
 then
-  echo 'installed'
+  echo '1'
+else
+  echo '0'
 fi
