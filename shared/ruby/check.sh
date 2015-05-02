@@ -7,5 +7,7 @@ fi
 if [[ -n $(which rvm) ]] && \
    [[ -n $(rvm list | grep ruby-2.2) ]]
 then
-  echo 'installed'
+  echo '1'
+else
+  echo '0'
 fi
