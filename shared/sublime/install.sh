@@ -2,8 +2,8 @@
 
 echo 'Installing Sublime Text...'
 
-if [ -f sublime.dmg ]; then
-  rm sublime.dmg
+if [ -f "$HOME/sublime.dmg" ]; then
+  rm $HOME/sublime.dmg
 fi
 
 sublime_settings_path="$HOME/Library/Application Support/Sublime Text 3"
@@ -12,15 +12,15 @@ current_dir=$PWD
 
 echo -n 'Downloading...'
 
-curl "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083.dmg" -o "sublime.dmg" >/dev/null 2>&1
+curl "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083.dmg" -o "$HOME/sublime.dmg" >/dev/null 2>&1
 echo -e "\033[34;32mDone.\033[0m"
 
 echo -n 'Installing...'
 
-hdiutil attach -nobrowse sublime.dmg > /dev/null
+hdiutil attach -nobrowse $HOME/sublime.dmg > /dev/null
 cp -r "/Volumes/Sublime Text/Sublime Text.app" "/Applications/Sublime Text.app"
 hdiutil detach "/Volumes/Sublime Text" > /dev/null
-rm sublime.dmg
+rm $HOME/sublime.dmg
 echo -e "\033[34;32mDone.\033[0m"
 
 echo -n 'Installing Package Control...'
