@@ -12,7 +12,15 @@ then
   exit 1
 fi
 
+expect <<-DONE
+spawn rvm install ruby-2.2.1
+expect -re "password required"
+send "$1\n"
+expect eof
+DONE
+
 rvm install ruby-2.2.1
 rvm use 2.2.1 --default
 
 echo -e "\033[34;32mDone.\033[0m"
+
