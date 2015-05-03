@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo -n 'Setting up symlink...'
-echo 'Setting up Sublime Text symlink' > /tmp/learninstall.step
 
 if [ "$EUID" -ne 0 ]
 then

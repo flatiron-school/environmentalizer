@@ -46,7 +46,6 @@ to_be_installed_length=${#to_be_installed[@]}
 echo 'Setting up environment...'
 
 if [[ ${#to_be_installed[@]} -gt 0 ]]; then
-  printf "%s\n" "${to_be_installed[@]}" > /tmp/learninstallation.list
   for (( i=0; i<${to_be_installed_length}; i++ )); do
     "./${os_version}/${to_be_installed[i]}/install.sh"
     # for testing comment out above and comment in below
@@ -56,5 +55,3 @@ fi
 
 run_state="after"
 write_computer_state 1>&2 2>/dev/null
-rm /tmp/learninstallation.list
-rm /tmp/learninstall.step

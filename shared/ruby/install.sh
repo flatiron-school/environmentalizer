@@ -1,8 +1,6 @@
 #!/bin/bash
 
 echo 'Installing Ruby...'
-echo 'Installing Ruby' > /tmp/learninstall.step
-
 
 if [[ -f $HOME/.rvm/scripts/rvm ]]; then
   . $HOME/.rvm/scripts/rvm

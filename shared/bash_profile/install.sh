@@ -8,8 +8,6 @@ fi
 
 echo -n 'Setting up Flatiron School .bash_profile...'
 
-echo 'Setting up .bash_profile' > /tmp/learninstall.step
-
 curl "https://raw.githubusercontent.com/flatiron-school/dotfiles/master/bash_profile" -o "$HOME/.bash_profile" >/dev/null 2>&1
 
 echo -e "\033[34;32mDone.\033[0m"

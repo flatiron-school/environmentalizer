@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo 'Installing Homebrew...'
-echo 'Installing Homebrew' > /tmp/learninstall.step
 
 if [[ $# -eq 0 ]]
 then
