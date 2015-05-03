@@ -18,6 +18,6 @@ send "$1\n"
 expect eof
 DONE
 
-rm homebrew.rb
+#rm homebrew.rb
 
 echo -e "\033[34;32mDone.\033[0m"
