@@ -21,4 +21,6 @@ send "$1\n"
 expect eof
 DONE
 
+rvm use 2.2.1 --default
+
 echo -e "\033[34;32mDone.\033[0m"
