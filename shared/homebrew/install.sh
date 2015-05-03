@@ -8,7 +8,7 @@ then
   exit 1
 fi
 
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install -o homebrew.rb
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install -o "$HOME/homebrew.rb"
 expect <<- DONE
 spawn ruby homebrew.rb
 expect -re "RETURN"
@@ -18,6 +18,6 @@ send "$1\n"
 expect eof
 DONE
 
-#rm homebrew.rb
+rm "$HOME/homebrew.rb"
 
 echo -e "\033[34;32mDone.\033[0m"
