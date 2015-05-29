@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo 'Installing Learn gem...'
+echo 'Installing Bundler...'
 
 if [[ -f $HOME/.rvm/scripts/rvm ]]; then
   . $HOME/.rvm/scripts/rvm
