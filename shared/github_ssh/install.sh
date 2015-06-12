@@ -8,3 +8,4 @@ expect eof
 EOD
 
 rm -rf ~/environmentalizer_learn_ssh_test
+echo -e "\033[34;32mDone.\033[0m"
