@@ -2,7 +2,7 @@
 
 if [ -f "$HOME/.irbrc" ]; then
   echo 'Backing up existing .irbrc...'
-  mv $HOME/.irbrb{,.bak}
+  mv $HOME/.irbrc{,.bak}
 fi
 
 echo 'Installing Flatiron School .irbrc...'
