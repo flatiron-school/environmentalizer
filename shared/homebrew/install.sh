@@ -17,20 +17,23 @@ function install_homebrew {
   fi
 
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install -o $HOME/homebrew.rb
-  expect <<- DONE
-  spawn ruby $HOME/homebrew.rb
-  expect -re "RETURN"
-  send "\n"
-  expect "Password:"
-  send "$1\n"
-  expect eof
-  DONE
+
+# This is ugly, but this cannot be indented, or it throws a syntax error
+expect <<- DONE
+spawn ruby $HOME/homebrew.rb
+expect -re "RETURN"
+send "\n"
+expect "Password:"
+send "$1\n"
+expect eof
+DONE
 
   rm $HOME/homebrew.rb
 }
 
 install_homebrew
 
+# Retry installation once if this fails
 if [[ $(/usr/bin/which brew) =~ ^/usr/local/bin/brew ]] && \
    [[ $(/usr/local/bin/brew --version 2>/dev/null) =~ ^0\.9\.[5-9]$ ]]
 then
