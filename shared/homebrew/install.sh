@@ -31,7 +31,7 @@ DONE
   rm $HOME/homebrew.rb
 }
 
-install_homebrew
+install_homebrew $1
 
 # Retry installation once if this fails
 if [[ $(/usr/bin/which brew) =~ ^/usr/local/bin/brew ]] && \
@@ -39,7 +39,7 @@ if [[ $(/usr/bin/which brew) =~ ^/usr/local/bin/brew ]] && \
 then
   echo '1'
 else
-  install_homebrew
+  install_homebrew $1
 fi
 
 echo -e "\033[34;32mDone.\033[0m"
