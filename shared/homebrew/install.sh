@@ -11,6 +11,7 @@ fi
 # Remove brew's git dir if it exists, otherwise installation will fail
 if [ $(ls /usr/local/.git 2>/dev/null | wc -l) -gt 0 ]
 then
+  echo 'Removing left over brew files...'
   rm -rf /usr/local/.git && brew cleanup
 fi
 
