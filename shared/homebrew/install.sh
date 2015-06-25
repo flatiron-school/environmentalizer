@@ -8,7 +8,7 @@ then
   exit 1
 fi
 
-function installHomebrew {
+function install_homebrew {
   # Remove brew's git dir if it exists, otherwise installation will fail
   if [ $(ls /usr/local/.git 2>/dev/null | wc -l) -gt 0 ]
   then
@@ -29,14 +29,14 @@ function installHomebrew {
   rm $HOME/homebrew.rb
 }
 
-installHomebrew
+install_homebrew
 
 if [[ $(/usr/bin/which brew) =~ ^/usr/local/bin/brew ]] && \
    [[ $(/usr/local/bin/brew --version 2>/dev/null) =~ ^0\.9\.[5-9]$ ]]
 then
   echo '1'
 else
-  installHomebrew
+  install_homebrew
 fi
 
 echo -e "\033[34;32mDone.\033[0m"
