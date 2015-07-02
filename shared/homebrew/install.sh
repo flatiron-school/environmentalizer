@@ -9,13 +9,6 @@ then
 fi
 
 function install_homebrew {
-  # Remove brew's git dir if it exists, otherwise installation will fail
-  if [ $(ls /usr/local/.git 2>/dev/null | wc -l) -gt 0 ]
-  then
-    echo 'Removing left over brew files...'
-    rm -rf /usr/local/.git && brew cleanup
-  fi
-
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install -o $HOME/homebrew.rb
 
 # This is ugly, but this cannot be indented, or it throws a syntax error
@@ -39,6 +32,13 @@ if [[ $(/usr/bin/which brew) =~ ^/usr/local/bin/brew ]] && \
 then
   echo '1'
 else
+  # Remove brew's git dir if it exists, otherwise installation will fail
+  if [ $(ls /usr/local/.git 2>/dev/null | wc -l) -gt 0 ]
+  then
+    echo 'Removing left over brew files...'
+    rm -rf /usr/local/.git && brew cleanup
+  fi
+
   install_homebrew $1
 fi
 
