@@ -15,6 +15,9 @@ unzip -q $HOME/postgresapp.zip -d $HOME/
 mv $HOME/Postgres.app /Applications/
 
 open /Applications/Postgres.app && sleep 3 && killall "Postgres"
+defaults write $HOME/Library/Preferences/com.postgresapp.Postgres.plist ShowWelcomeWindow -bool FALSE
+killall -u $USER cfprefsd
+open /Applications/Postgres.app
 
 rm $HOME/postgresapp.zip
 echo -e "\033[34;32mDone.\033[0m"
