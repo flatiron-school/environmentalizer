@@ -14,7 +14,7 @@ echo -n 'Installing...'
 unzip -q $HOME/postgresapp.zip -d $HOME/
 
 if [ -d /Applications/Postgres.app ]; then
-  kill -9 $(ps aux | grep Postgres.app | awk '{print $2}')
+  kill -9 $(ps aux | grep Postgres.app | awk '{print $2}') > /dev/null 2>&1
 
   if [[ ! -e /Applications/Postgres.app.old ]]; then
     mv /Applications/Postgres.app{,.old}
