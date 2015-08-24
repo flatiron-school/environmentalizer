@@ -26,17 +26,6 @@ if [ -d /Applications/Postgres.app ]; then
 
     mv /Applications/Postgres.app "/Applications/Postgres.app.old.$num"
   fi
-
-  if [[ ! -e "$HOME/Postgres.app" ]]; then
-    mv "$HOME/Postgres.app" "$HOME/Postgres.app.old"
-  else
-    num=2
-    while [[ -e "$HOME/Postgres.app.old.$num" ]]; do
-      (( num++ ))
-    done
-
-    mv "$HOME/Postgres.app" "$HOME/Postgres.app.old.$num"
-  fi
 fi
 
 mv $HOME/Postgres.app /Applications/
