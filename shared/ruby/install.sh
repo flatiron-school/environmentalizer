@@ -15,12 +15,12 @@ fi
 
 expect <<-DONE
 set timeout 120
-spawn rvm install ruby-2.2.2
+spawn rvm install ruby-2.2.3
 expect -re "password required for"
 send "$1\n"
 expect eof
 DONE
 
-rvm use 2.2.2 --default
+rvm use 2.2.3 --default
 
 echo -e "\033[34;32mDone.\033[0m"
