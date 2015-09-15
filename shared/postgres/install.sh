@@ -32,5 +32,7 @@ mv $HOME/Postgres.app /Applications/
 
 defaults write $HOME/Library/Preferences/com.postgresapp.Postgres.plist ShowWelcomeWindow -bool FALSE && killall -u $USER cfprefsd && open /Applications/Postgres.app && open $(mdfind kind:application Learn)
 
+brew install postgresql 2>/dev/null || brew update 1>&2 2>/dev/null && brew upgrade postgresql 2>/dev/null
+
 rm $HOME/postgresapp.zip
 echo -e "\033[34;32mDone.\033[0m"
