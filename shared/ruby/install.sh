@@ -14,7 +14,7 @@ then
 fi
 
 expect <<-DONE
-set timeout 120
+set timeout 300
 spawn rvm install ruby-2.2.3
 expect -re "password required for"
 send "$1\n"
