@@ -8,7 +8,7 @@ fi
 
 if [[ -n "$(which rvm)" ]] && [[ -f "$HOME/.rvm/bin/rvm" ]]
 then
-  if [[ $(rvm --version 2> /dev/null) =~ 1\.26.* ]]
+  if [[ $(rvm --version 2> /dev/null) =~ 1\.26|7.* ]]
   then
     echo '1'
   else
